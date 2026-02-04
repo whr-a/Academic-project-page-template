@@ -104,6 +104,33 @@ function alignPosttrainInputs() {
     });
 }
 
+function stripPretrainUnderstandingExtras() {
+    const section = document.getElementById('pretrain-understanding');
+    if (!section) {
+        return;
+    }
+    section.querySelectorAll('.fold--thinking').forEach(el => el.remove());
+    section.querySelectorAll('.field').forEach(field => {
+        const label = field.querySelector('.field-label');
+        if (!label) {
+            return;
+        }
+        if (label.textContent.trim().toLowerCase() === 'answer') {
+            field.remove();
+        }
+    });
+    section.querySelectorAll('details').forEach(details => {
+        const summary = details.querySelector('summary');
+        if (!summary) {
+            return;
+        }
+        const summaryText = summary.textContent.trim().toLowerCase();
+        if (summaryText === 'thinking' || summaryText === 'answer') {
+            details.remove();
+        }
+    });
+}
+
 let resizeTimer;
 window.addEventListener('resize', function() {
     window.clearTimeout(resizeTimer);
@@ -111,6 +138,7 @@ window.addEventListener('resize', function() {
 });
 
 window.addEventListener('load', function() {
+    stripPretrainUnderstandingExtras();
     alignPosttrainInputs();
 });
 
@@ -134,6 +162,7 @@ $(document).ready(function() {
     // Setup video autoplay for carousel
     setupVideoCarouselAutoplay();
 
+    stripPretrainUnderstandingExtras();
     alignPosttrainInputs();
 
 })

@@ -748,20 +748,6 @@ audio {
   width: 100%;
 }
 
-.fold--caption {
-  background: #fff4d6;
-  border-color: #edc988;
-}
-
-.fold--caption summary,
-.fold--caption .fold-body {
-  background: #fff4d6;
-}
-
-.fold--caption .fold-body {
-  border-top-color: #edc988;
-}
-
 .fold--thinking {
   background: #e8f1ff;
   border-color: #bdd6ff;

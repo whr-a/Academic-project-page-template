@@ -4,43 +4,22 @@ const DOMAIN_LABELS = {
   music: "Music",
   sound: "Sound"
 };
+const DEMO_DATA = window.DEMO_DATA || null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  Promise.all([
-    renderGenerationSection("pretrain-generation", "static/data/pre-training/generation"),
-    renderUnderstandingSection({
-      targetId: "pretrain-understanding",
-      basePath: "static/data/pre-training/understanding",
-      mode: "pretrain"
-    }),
-    renderUnderstandingSection({
-      targetId: "posttrain-understanding",
-      basePath: "static/data/post-training/understanding",
-      mode: "posttrain"
-    })
-  ]).then(() => {
-    setupRevealObserver();
+  renderGenerationSection("pretrain-generation", "static/data/pre-training/generation");
+  renderUnderstandingSection({
+    targetId: "pretrain-understanding",
+    basePath: "static/data/pre-training/understanding",
+    mode: "pretrain"
   });
+  renderUnderstandingSection({
+    targetId: "posttrain-understanding",
+    basePath: "static/data/post-training/understanding",
+    mode: "posttrain"
+  });
+  setupRevealObserver();
 });
-
-async function loadJsonl(path) {
-  const response = await fetch(path);
-  if (!response.ok) {
-    console.warn("Missing data:", path);
-    return [];
-  }
-  const raw = await response.text();
-  const lines = raw.split(/\n/).filter((line) => line.trim());
-  const items = [];
-  lines.forEach((line) => {
-    try {
-      items.push(JSON.parse(line));
-    } catch (err) {
-      console.warn("Bad JSONL line:", path, err);
-    }
-  });
-  return items;
-}
 
 function normalizeText(text) {
   if (!text) {
@@ -127,6 +106,17 @@ function getBasename(path) {
   }
   const parts = String(path).split(/[\\/]/);
   return parts[parts.length - 1];
+}
+
+function getNestedValue(source, keys, fallback) {
+  let current = source;
+  for (let i = 0; i < keys.length; i += 1) {
+    if (!current || typeof current !== "object" || !(keys[i] in current)) {
+      return fallback;
+    }
+    current = current[keys[i]];
+  }
+  return current;
 }
 
 function createDomainBlock(label) {
@@ -224,20 +214,18 @@ function createDetails(label, text) {
   return details;
 }
 
-async function renderGenerationSection(targetId, basePath) {
+function renderGenerationSection(targetId, basePath) {
   const target = document.getElementById(targetId);
   if (!target) {
     return;
   }
 
-  const domainData = await Promise.all(
-    DOMAIN_ORDER.map(async (domain) => {
-      const items = await loadJsonl(`${basePath}/${domain}/text/captions.jsonl`);
-      return { domain, items };
-    })
-  );
-
-  domainData.forEach(({ domain, items }) => {
+  DOMAIN_ORDER.forEach((domain) => {
+    const items = getNestedValue(
+      DEMO_DATA,
+      ["preTraining", "generation", domain],
+      []
+    );
     if (!items.length) {
       return;
     }
@@ -259,20 +247,18 @@ async function renderGenerationSection(targetId, basePath) {
   });
 }
 
-async function renderUnderstandingSection({ targetId, basePath, mode }) {
+function renderUnderstandingSection({ targetId, basePath, mode }) {
   const target = document.getElementById(targetId);
   if (!target) {
     return;
   }
 
-  const domainData = await Promise.all(
-    DOMAIN_ORDER.map(async (domain) => {
-      const items = await loadJsonl(`${basePath}/${domain}/text/captions.jsonl`);
-      return { domain, items };
-    })
-  );
-
-  domainData.forEach(({ domain, items }) => {
+  DOMAIN_ORDER.forEach((domain) => {
+    const items = getNestedValue(
+      DEMO_DATA,
+      [mode === "posttrain" ? "postTraining" : "preTraining", "understanding", domain],
+      []
+    );
     if (!items.length) {
       return;
     }

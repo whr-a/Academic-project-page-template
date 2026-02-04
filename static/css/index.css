@@ -452,152 +452,6 @@ code {
   visibility: visible;
 }
 
-
-/* More Works Dropdown */
-.more-works-container {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.more-works-btn {
-  background: var(--background-primary);
-  color: var(--text-primary);
-  border: 2px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
-  padding: 0.75rem 1.25rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.more-works-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  background: var(--background-secondary);
-  border-color: var(--primary-color);
-}
-
-.more-works-btn .dropdown-arrow {
-  transition: var(--transition);
-  font-size: 0.8rem;
-}
-
-.more-works-btn.active .dropdown-arrow {
-  transform: rotate(180deg);
-}
-
-.more-works-dropdown {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 0;
-  width: 400px;
-  max-width: 90vw;
-  background: var(--background-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-xl);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: var(--transition);
-  max-height: 70vh;
-  overflow-y: auto;
-}
-
-.more-works-dropdown.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 1.5rem 1rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.dropdown-header h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-}
-
-.close-btn:hover {
-  background: var(--background-accent);
-  color: var(--text-primary);
-}
-
-.works-list {
-  padding: 1rem;
-}
-
-.work-item {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-  margin-bottom: 0.5rem;
-}
-
-.work-item:hover {
-  background: var(--background-accent);
-  transform: translateX(4px);
-}
-
-.work-info h5 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.work-info p {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-.work-venue {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  font-style: italic;
-}
-
-.work-item .fas {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
-  flex-shrink: 0;
-}
-
-
 /* Mobile Responsive Improvements */
 @media screen and (max-width: 768px) {
   .hero-body {
@@ -624,24 +478,6 @@ code {
     padding: 0.75rem 1rem !important;
   }
   
-  .more-works-container {
-    bottom: 2rem;
-    right: 1rem;
-    top: auto;
-  }
-  
-  .more-works-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
-  
-  .more-works-dropdown {
-    width: calc(100vw - 2rem);
-    right: -1rem;
-    bottom: calc(100% + 0.5rem);
-    top: auto;
-  }
-  
   .results-carousel .item {
     margin: 0.5rem;
     padding: 1rem;
@@ -663,26 +499,6 @@ code {
   
   .hero-body {
     padding: 1.5rem 0.75rem;
-  }
-  
-  .more-works-container {
-    position: fixed;
-    bottom: 2rem;
-    right: 1rem;
-    z-index: 1000;
-  }
-  
-  .more-works-btn {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.75rem;
-  }
-  
-  .more-works-dropdown {
-    position: absolute;
-    bottom: calc(100% + 0.5rem);
-    right: 0;
-    width: calc(100vw - 2rem);
-    max-width: 90vw;
   }
   
   .link-block {
@@ -757,6 +573,20 @@ a:focus {
   padding-top: 0;
 }
 
+.demo-section {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.demo-section--compact {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.demo-wide {
+  max-width: 1440px;
+}
+
 .demo-quick-links .buttons {
   gap: 0.75rem;
   flex-wrap: wrap;
@@ -772,7 +602,7 @@ a:focus {
 }
 
 .demo-subsection {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 .domain-stack {
@@ -784,7 +614,7 @@ a:focus {
 .domain-block {
   border: 1px solid #e5e7eb;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
@@ -809,19 +639,25 @@ a:focus {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.85rem;
   align-items: stretch;
 }
 
 .sample-card {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.85rem;
   background: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.8rem;
   height: 100%;
+  min-width: 0;
+  text-align: left;
+}
+
+.sample-card * {
+  text-align: left;
 }
 
 .sample-header {
@@ -842,17 +678,20 @@ a:focus {
 .demo-card-output {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.05rem;
+  align-items: stretch;
 }
 
 .sample-card--posttrain .demo-card-input {
-  min-height: 220px;
+  height: 230px;
+  overflow: auto;
 }
 
 .io-divider {
   width: 100%;
   height: 1px;
   background: #e5e7eb;
+  margin: 0.1rem 0;
 }
 
 .field {
@@ -871,6 +710,8 @@ a:focus {
 
 .field-content p {
   margin: 0 0 0.5rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .field-content p:last-child {
@@ -888,9 +729,14 @@ audio {
   overflow: hidden;
 }
 
+.fold--thinking {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
 .fold summary {
   cursor: pointer;
-  padding: 0.6rem 0.8rem;
+  padding: 0.8rem 0.9rem;
   font-weight: 600;
   list-style: none;
   display: flex;
@@ -913,11 +759,13 @@ audio {
 }
 
 .fold-body {
-  padding: 0.75rem 0.8rem 0.9rem;
+  padding: 0.95rem 0.9rem 1rem;
   border-top: 1px solid #e5e7eb;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

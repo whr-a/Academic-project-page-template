@@ -83,6 +83,37 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
+function alignPosttrainInputs() {
+    const grids = document.querySelectorAll('#posttrain-understanding .card-grid');
+    grids.forEach(grid => {
+        const inputs = grid.querySelectorAll('.sample-card--posttrain .demo-card-input');
+        if (!inputs.length) {
+            return;
+        }
+        let maxHeight = 0;
+        inputs.forEach(input => {
+            input.style.height = 'auto';
+            const height = input.offsetHeight;
+            if (height > maxHeight) {
+                maxHeight = height;
+            }
+        });
+        inputs.forEach(input => {
+            input.style.height = `${maxHeight}px`;
+        });
+    });
+}
+
+let resizeTimer;
+window.addEventListener('resize', function() {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(alignPosttrainInputs, 150);
+});
+
+window.addEventListener('load', function() {
+    alignPosttrainInputs();
+});
+
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
 
@@ -102,5 +133,7 @@ $(document).ready(function() {
     
     // Setup video autoplay for carousel
     setupVideoCarouselAutoplay();
+
+    alignPosttrainInputs();
 
 })

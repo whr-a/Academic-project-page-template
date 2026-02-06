@@ -573,6 +573,20 @@ a:focus {
   padding-top: 0;
 }
 
+.demo-overview {
+  padding-top: 2.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.demo-overview-title {
+  margin-bottom: 0.35rem !important;
+  font-size: clamp(2.35rem, 6vw, 4.2rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: #0f172a !important;
+}
+
 .demo-section {
   position: relative;
   padding-top: 1.75rem;

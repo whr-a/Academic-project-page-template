@@ -131,6 +131,55 @@ function stripPretrainUnderstandingExtras() {
     });
 }
 
+function setupDemoAudioInteractions() {
+    const cards = document.querySelectorAll('.sample-card');
+    cards.forEach(card => {
+        const header = card.querySelector('.sample-header');
+        const hasAudio = card.querySelector('audio');
+        if (!header || !hasAudio || header.querySelector('.sample-cta')) {
+            return;
+        }
+
+        const cta = document.createElement('span');
+        cta.className = 'sample-cta';
+        cta.textContent = 'Tap to listen';
+        header.appendChild(cta);
+    });
+
+    const audios = document.querySelectorAll('.sample-card audio');
+    audios.forEach(audio => {
+        if (audio.dataset.demoBound === '1') {
+            return;
+        }
+        audio.dataset.demoBound = '1';
+
+        const card = audio.closest('.sample-card');
+        if (!card) {
+            return;
+        }
+
+        audio.addEventListener('play', function() {
+            audios.forEach(other => {
+                if (other !== audio && !other.paused) {
+                    other.pause();
+                }
+            });
+            document.querySelectorAll('.sample-card.is-playing').forEach(el => {
+                if (el !== card) {
+                    el.classList.remove('is-playing');
+                }
+            });
+            card.classList.add('is-playing');
+        });
+
+        const clearPlayingState = function() {
+            card.classList.remove('is-playing');
+        };
+        audio.addEventListener('pause', clearPlayingState);
+        audio.addEventListener('ended', clearPlayingState);
+    });
+}
+
 let resizeTimer;
 window.addEventListener('resize', function() {
     window.clearTimeout(resizeTimer);
@@ -139,6 +188,7 @@ window.addEventListener('resize', function() {
 
 window.addEventListener('load', function() {
     stripPretrainUnderstandingExtras();
+    setupDemoAudioInteractions();
     alignPosttrainInputs();
 });
 
@@ -163,6 +213,7 @@ $(document).ready(function() {
     setupVideoCarouselAutoplay();
 
     stripPretrainUnderstandingExtras();
+    setupDemoAudioInteractions();
     alignPosttrainInputs();
 
 })

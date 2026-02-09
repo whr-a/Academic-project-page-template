@@ -84,7 +84,7 @@ function setupVideoCarouselAutoplay() {
 }
 
 function alignPosttrainInputs() {
-    const grids = document.querySelectorAll('#posttrain-understanding .card-grid');
+    const grids = document.querySelectorAll('#posttrain-understanding .card-grid, #posttrain-generation .card-grid, #emergent .card-grid');
     grids.forEach(grid => {
         const inputs = grid.querySelectorAll('.sample-card--posttrain .demo-card-input');
         if (!inputs.length) {

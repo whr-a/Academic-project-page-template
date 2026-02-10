@@ -122,7 +122,7 @@ function restructureDemoLayout() {
         understandingTitle.textContent = 'Understanding';
     }
     if (understandingSubtitle) {
-        understandingSubtitle.textContent = 'Understanding demos (collapsed by default).';
+        understandingSubtitle.textContent = 'Audio understanding demos organized by training stage.';
     }
 
     const setSubsectionTitle = function(section, titleText) {

@@ -632,7 +632,7 @@ a:focus {
 .overview-headline {
   margin: 0.75rem 0 0;
   font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-size: clamp(1.58rem, 3.35vw, 2.62rem);
+  font-size: clamp(1.92rem, 4.1vw, 3.08rem);
   line-height: 1.02;
   letter-spacing: -0.02em;
   font-weight: 700;
@@ -653,10 +653,13 @@ a:focus {
 
 .overview-subheadline {
   margin: 0.72rem 0 0;
-  font-size: clamp(1.03rem, 2vw, 1.24rem);
-  line-height: 1.35;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(1.92rem, 4.1vw, 3.08rem);
+  line-height: 1.04;
   font-weight: 700;
-  color: #1e40af;
+  letter-spacing: -0.02em;
+  color: #123b8a;
+  text-wrap: balance;
 }
 
 .overview-pills {
@@ -690,9 +693,17 @@ a:focus {
 .overview-copy {
   margin: 0;
   max-width: 760px;
-  color: #334155;
-  font-size: 1.03rem;
-  line-height: 1.78;
+  color: #1f3557;
+  font-size: 1.08rem;
+  line-height: 1.84;
+  font-weight: 500;
+  letter-spacing: 0.003em;
+  text-wrap: pretty;
+}
+
+.overview-emphasis {
+  color: #0f3a92;
+  font-weight: 700;
 }
 
 .overview-tagline {
@@ -700,7 +711,7 @@ a:focus {
   padding-top: 0.8rem;
   border-top: 1px solid #dbeafe;
   font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-size: clamp(1.08rem, 2.1vw, 1.42rem);
+  font-size: clamp(1.34rem, 2.7vw, 1.94rem);
   line-height: 1.3;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -732,8 +743,8 @@ a:focus {
   }
 
   .overview-copy {
-    font-size: 0.94rem;
-    line-height: 1.62;
+    font-size: 0.98rem;
+    line-height: 1.66;
   }
 }
 

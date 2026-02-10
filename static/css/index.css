@@ -667,6 +667,45 @@ a:focus {
   margin-top: 1.15rem;
 }
 
+.demo-toggle {
+  margin-top: 1.2rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  background: #f8fbff;
+  overflow: hidden;
+}
+
+.demo-toggle > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.9rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #1e3a8a;
+  background: #eff6ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.demo-toggle > summary::-webkit-details-marker {
+  display: none;
+}
+
+.demo-toggle > summary::after {
+  content: "+";
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.demo-toggle[open] > summary::after {
+  content: "-";
+}
+
+.demo-toggle-body {
+  padding: 0.2rem 0.9rem 0.9rem;
+}
+
 .domain-stack {
   display: flex;
   flex-direction: column;

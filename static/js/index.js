@@ -83,8 +83,111 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
+function restructureDemoLayout() {
+    if (document.body.dataset.demoRestructured === '1') {
+        return;
+    }
+
+    const emergentSection = document.getElementById('emergent');
+    const preSection = document.getElementById('pre-training');
+    const postSection = document.getElementById('post-training');
+    if (!emergentSection || !preSection || !postSection) {
+        return;
+    }
+
+    const preContainer = preSection.querySelector('.container');
+    const postContainer = postSection.querySelector('.container');
+    const preGeneration = document.getElementById('pretrain-generation');
+    const postGeneration = document.getElementById('posttrain-generation');
+    const preUnderstanding = document.getElementById('pretrain-understanding');
+    const postUnderstanding = document.getElementById('posttrain-understanding');
+    const emergentNote = emergentSection.querySelector('.demo-note');
+    const emergentGrid = emergentSection.querySelector('.card-grid');
+    if (!preContainer || !postContainer || !preGeneration || !postGeneration || !preUnderstanding || !postUnderstanding || !emergentGrid) {
+        return;
+    }
+
+    const generationTitle = preContainer.querySelector('h2.title.is-3');
+    const generationSubtitle = preContainer.querySelector('p.subtitle.is-6');
+    if (generationTitle) {
+        generationTitle.textContent = 'Generation';
+    }
+    if (generationSubtitle) {
+        generationSubtitle.textContent = 'Audio generation demos organized by training stage.';
+    }
+
+    const understandingTitle = postContainer.querySelector('h2.title.is-3');
+    const understandingSubtitle = postContainer.querySelector('p.subtitle.is-6');
+    if (understandingTitle) {
+        understandingTitle.textContent = 'Understanding';
+    }
+    if (understandingSubtitle) {
+        understandingSubtitle.textContent = 'Understanding demos (collapsed by default).';
+    }
+
+    const setSubsectionTitle = function(section, titleText) {
+        const title = section.querySelector('h3.title.is-4');
+        if (title) {
+            title.textContent = titleText;
+        }
+    };
+    setSubsectionTitle(preGeneration, 'Pre-training');
+    setSubsectionTitle(postGeneration, 'Post-training');
+    setSubsectionTitle(preUnderstanding, 'Pre-training');
+    setSubsectionTitle(postUnderstanding, 'Post-training');
+
+    const preUnderstandingSubtitle = preUnderstanding.querySelector('p.subtitle.is-6');
+    if (preUnderstandingSubtitle) {
+        preUnderstandingSubtitle.textContent = 'Understanding results from pre-training checkpoints.';
+    }
+    const postUnderstandingSubtitle = postUnderstanding.querySelector('p.subtitle.is-6');
+    if (postUnderstandingSubtitle) {
+        postUnderstandingSubtitle.textContent = 'Understanding results from instruction-tuned checkpoints.';
+    }
+
+    const extraObservation = document.createElement('div');
+    extraObservation.className = 'demo-subsection';
+    extraObservation.id = 'extra-observation';
+
+    const extraTitle = document.createElement('h3');
+    extraTitle.className = 'title is-4';
+    extraTitle.textContent = 'Extra Observation';
+
+    const extraSubtitle = document.createElement('p');
+    extraSubtitle.className = 'subtitle is-6';
+    extraSubtitle.textContent = 'Additional generation observations from instruction-tuned samples.';
+
+    extraObservation.appendChild(extraTitle);
+    extraObservation.appendChild(extraSubtitle);
+    if (emergentNote) {
+        extraObservation.appendChild(emergentNote);
+    }
+    extraObservation.appendChild(emergentGrid);
+
+    preContainer.appendChild(postGeneration);
+    preContainer.appendChild(extraObservation);
+
+    const understandingToggle = document.createElement('details');
+    understandingToggle.className = 'demo-toggle';
+
+    const toggleSummary = document.createElement('summary');
+    toggleSummary.textContent = 'Click to expand understanding demos';
+    understandingToggle.appendChild(toggleSummary);
+
+    const toggleBody = document.createElement('div');
+    toggleBody.className = 'demo-toggle-body';
+    toggleBody.appendChild(preUnderstanding);
+    toggleBody.appendChild(postUnderstanding);
+    understandingToggle.appendChild(toggleBody);
+
+    postContainer.appendChild(understandingToggle);
+    emergentSection.remove();
+
+    document.body.dataset.demoRestructured = '1';
+}
+
 function alignPosttrainInputs() {
-    const grids = document.querySelectorAll('#posttrain-understanding .card-grid, #posttrain-generation .card-grid, #emergent .card-grid');
+    const grids = document.querySelectorAll('#posttrain-understanding .card-grid, #posttrain-generation .card-grid, #extra-observation .card-grid');
     grids.forEach(grid => {
         const inputs = grid.querySelectorAll('.sample-card--posttrain .demo-card-input');
         if (!inputs.length) {
@@ -187,6 +290,7 @@ window.addEventListener('resize', function() {
 });
 
 window.addEventListener('load', function() {
+    restructureDemoLayout();
     stripPretrainUnderstandingExtras();
     setupDemoAudioInteractions();
     alignPosttrainInputs();
@@ -212,6 +316,7 @@ $(document).ready(function() {
     // Setup video autoplay for carousel
     setupVideoCarouselAutoplay();
 
+    restructureDemoLayout();
     stripPretrainUnderstandingExtras();
     setupDemoAudioInteractions();
     alignPosttrainInputs();

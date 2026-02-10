@@ -672,31 +672,6 @@ a:focus {
     linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
-.overview-flow {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid #bfdbfe;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 0.9rem;
-  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
-}
-
-.overview-step {
-  padding: 0.45rem 0.3rem;
-  text-align: center;
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #1e3a8a;
-}
-
-.overview-step + .overview-step {
-  border-left: 1px solid #dbeafe;
-}
-
 .overview-copy {
   margin: 0;
   max-width: 760px;
@@ -725,14 +700,6 @@ a:focus {
   color: #25406a;
   font-size: 1.02rem;
   font-style: italic;
-}
-
-.overview-emphasis {
-  color: #0f3a92;
-  font-weight: 700;
-  background: linear-gradient(180deg, rgba(191, 219, 254, 0.5) 0%, rgba(191, 219, 254, 0.05) 100%);
-  border-radius: 0.28em;
-  padding: 0 0.22em;
 }
 
 .overview-tagline {

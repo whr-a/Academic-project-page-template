@@ -800,18 +800,33 @@ a:focus {
   padding: 0.8rem 0.9rem;
 }
 
-.tldr-thinking pre {
+.tldr-thinking .fold-body p {
   margin: 0;
-  overflow-x: auto;
-}
-
-.tldr-thinking code {
-  font-size: 0.86rem;
-  line-height: 1.5;
   color: #0f172a;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.tldr-output {
+.tldr-thinking .fold-body p + p {
+  margin-top: 0.34rem;
+}
+
+.tldr-caption {
+  margin: 0;
+}
+
+.tldr-caption .fold-body {
+  padding: 0.8rem 0.9rem;
+}
+
+.tldr-caption .fold-body p {
+  margin: 0;
+  color: #1f3557;
+  font-size: 0.9rem;
+  line-height: 1.52;
+}
+
+.tldr-audio-field {
   margin: 0;
   padding: 0.8rem 0.9rem;
   border: 1px solid #dbeafe;
@@ -819,60 +834,12 @@ a:focus {
   background: #ffffff;
 }
 
-.tldr-audio-mock {
-  margin-top: 0.5rem;
-  border: 1px solid #bfdbfe;
-  border-radius: 999px;
-  padding: 0.42rem 0.62rem;
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: #eff6ff;
+.tldr-audio-field audio {
+  margin-top: 0.48rem;
+  width: 100%;
+  height: 34px;
 }
 
-.tldr-audio-play {
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #2563eb;
-  color: #ffffff;
-  font-size: 0.72rem;
-  flex-shrink: 0;
-}
-
-.tldr-audio-progress {
-  position: relative;
-  flex: 1;
-  height: 0.35rem;
-  border-radius: 999px;
-  background: #cbd5e1;
-  overflow: hidden;
-}
-
-.tldr-audio-progress-bar {
-  display: block;
-  width: 38%;
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #2563eb, #0ea5e9);
-}
-
-.tldr-audio-time {
-  color: #334155;
-  font-size: 0.78rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.tldr-output-placeholder {
-  margin: 0.5rem 0 0;
-  color: #0f3a92;
-  font-size: 0.92rem;
-  font-weight: 600;
-}
 
 @media screen and (max-width: 960px) {
   .overview-grid {
@@ -935,8 +902,9 @@ a:focus {
     line-height: 1.66;
   }
 
-  .tldr-thinking code {
-    font-size: 0.8rem;
+  .tldr-thinking .fold-body p,
+  .tldr-caption .fold-body p {
+    font-size: 0.84rem;
   }
 }
 

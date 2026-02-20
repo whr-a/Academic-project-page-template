@@ -692,11 +692,11 @@ a:focus {
   text-wrap: balance;
 }
 
-.overview-copy--summary {
-  margin-top: 2.1rem;
+.overview-copy.overview-copy--summary {
+  margin-top: 3rem;
   color: #1f3557;
-  font-size: 1.12rem;
-  line-height: 1.82;
+  font-size: 1.26rem;
+  line-height: 1.9;
   font-weight: 500;
 }
 
@@ -922,10 +922,10 @@ a:focus {
     max-width: 315px;
   }
 
-  .overview-copy--summary {
-    margin-top: 1.55rem;
-    font-size: 1.04rem;
-    line-height: 1.72;
+  .overview-copy.overview-copy--summary {
+    margin-top: 2.2rem;
+    font-size: 1.14rem;
+    line-height: 1.78;
   }
 
   .tldr-thinking p:not(.tldr-plain-title),

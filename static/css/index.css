@@ -127,7 +127,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.3rem;
   margin-top: 0.65rem;
   margin-bottom: 1.1rem;
 }
@@ -693,7 +693,7 @@ a:focus {
 }
 
 .overview-copy--summary {
-  margin-top: 0.95rem;
+  margin-top: 1.45rem;
   color: #1f3557;
   font-size: 1.03rem;
   line-height: 1.78;
@@ -756,6 +756,7 @@ a:focus {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  text-align: left;
 }
 
 .tldr-section-title {
@@ -784,12 +785,31 @@ a:focus {
   text-transform: uppercase;
 }
 
+.tldr-field-label--plain {
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
 .tldr-field-content {
   margin: 0.48rem 0 0;
   color: #1e293b;
   font-size: 0.96rem;
   line-height: 1.62;
   font-weight: 500;
+}
+
+.tldr-assistant {
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.tldr-assistant .tldr-thinking,
+.tldr-assistant .tldr-caption,
+.tldr-assistant .tldr-audio-field {
+  margin-top: 0.62rem;
 }
 
 .tldr-thinking {
@@ -832,10 +852,19 @@ a:focus {
   border: 1px solid #dbeafe;
   border-radius: 12px;
   background: #ffffff;
+  text-align: left;
+}
+
+.tldr-audio-field .field-label {
+  display: block;
+  text-align: left;
 }
 
 .tldr-audio-field audio {
+  display: block;
   margin-top: 0.48rem;
+  margin-left: 0;
+  margin-right: auto;
   width: 100%;
   height: 34px;
 }
@@ -882,7 +911,7 @@ a:focus {
   }
 
   .institution-logo-row {
-    gap: 0.65rem;
+    gap: 0.9rem;
     margin-top: 0.55rem;
     margin-bottom: 0.95rem;
   }
@@ -898,6 +927,7 @@ a:focus {
   }
 
   .overview-copy--summary {
+    margin-top: 1.2rem;
     font-size: 0.98rem;
     line-height: 1.66;
   }
@@ -905,6 +935,10 @@ a:focus {
   .tldr-thinking .fold-body p,
   .tldr-caption .fold-body p {
     font-size: 0.84rem;
+  }
+
+  .tldr-assistant {
+    padding: 0.72rem 0.78rem;
   }
 }
 

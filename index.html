@@ -101,79 +101,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
-  <!-- WAVLab-like top nav (visual only) -->
-  <style>
-    body.has-wavlab-nav {
-      padding-top: 56px;
-    }
-    .wavlab-top-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background-color: #fff;
-      border-bottom: 1px solid #e8e8e8;
-      opacity: 0.95;
-      font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    .wavlab-top-nav .wavlab-nav-inner {
-      max-width: 1000px;
-      min-height: 56px;
-      margin: 0 auto;
-      padding: 0 12px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .wavlab-top-nav .wavlab-brand {
-      font-size: 1.25rem;
-      font-weight: 300;
-      color: #000;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .wavlab-top-nav .wavlab-brand:hover {
-      color: #000;
-      text-decoration: none;
-    }
-    .wavlab-top-nav .wavlab-links {
-      display: flex;
-      align-items: center;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none;
-    }
-    .wavlab-top-nav .wavlab-links::-webkit-scrollbar {
-      display: none;
-    }
-    .wavlab-top-nav .wavlab-link {
-      color: #000;
-      text-decoration: none;
-      padding: 0.5rem 0.62rem;
-      line-height: 1.5;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-    .wavlab-top-nav .wavlab-link:hover {
-      color: #b509ac;
-      text-decoration: none;
-    }
-    @media (max-width: 860px) {
-      .wavlab-top-nav .wavlab-nav-inner {
-        gap: 8px;
-        padding: 0 8px;
-      }
-      .wavlab-top-nav .wavlab-brand {
-        font-size: 1.1rem;
-      }
-      .wavlab-top-nav .wavlab-link {
-        padding: 0.45rem 0.45rem;
-        font-size: 0.95rem;
-      }
-    }
-  </style>
-  
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -251,32 +178,13 @@
   }
   </script>
 </head>
-<body class="has-wavlab-nav">
-
-  <header class="wavlab-top-nav" aria-label="WAVLab-like top navigation">
-    <div class="wavlab-nav-inner">
-      <a class="wavlab-brand" href="javascript:void(0)" onclick="return false;">WAVLab</a>
-      <nav class="wavlab-links" aria-label="Site sections">
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">About</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Activities</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Members</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Publications</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Open-source</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Courses</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Sponsors</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Info</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Positions</a>
-        <a class="wavlab-link" href="javascript:void(0)" onclick="return false;">Speech Lunch</a>
-      </nav>
-    </div>
-  </header>
+<body>
 
 
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
-  </div>
 
   <main id="main-content">
   <section class="hero">

@@ -135,15 +135,15 @@ body {
 .institution-logo {
   display: block;
   width: auto;
-  height: 56px;
-  max-width: 140px;
+  height: 84px;
+  max-width: 210px;
   object-fit: contain;
   object-position: center;
 }
 
 .institution-logo--wide {
-  height: 42px;
-  max-width: 260px;
+  height: 63px;
+  max-width: 390px;
 }
 
 .publication-banner {
@@ -921,13 +921,13 @@ a:focus {
   }
 
   .institution-logo {
-    height: 46px;
-    max-width: 112px;
+    height: 69px;
+    max-width: 168px;
   }
 
   .institution-logo--wide {
-    height: 34px;
-    max-width: 210px;
+    height: 51px;
+    max-width: 315px;
   }
 
   .overview-copy--summary {

@@ -285,7 +285,23 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions</h1>
+            <div class="publication-title-group">
+              <h1 class="title is-1 publication-title">Bagpiper: Solving Open-Ended Audio Tasks via Rich Captions</h1>
+              <div class="institution-logo-row" aria-label="Institution logos">
+                <figure class="institution-logo-item">
+                  <img src="static/images/cmu.jpeg" alt="Carnegie Mellon University logo">
+                </figure>
+                <figure class="institution-logo-item">
+                  <img src="static/images/wavlab.png" alt="Watanabe's Audio and Voice Lab logo">
+                </figure>
+                <figure class="institution-logo-item institution-logo-item--wide">
+                  <img src="static/images/LY_corporation.png" alt="LY Corporation logo">
+                </figure>
+                <figure class="institution-logo-item">
+                  <img src="static/images/nvidia.png" alt="NVIDIA logo">
+                </figure>
+              </div>
+            </div>
             <div class="is-size-5 publication-authors">
               <span class="author-block"><a href="https://jctian98.github.io/" target="_blank" rel="noopener noreferrer">Jinchuan Tian</a><sup>1,*</sup>,</span>
               <span class="author-block"><a href="https://whr-a.github.io/" target="_blank" rel="noopener noreferrer">Haoran Wang</a><sup>1,*</sup>,</span>
@@ -337,22 +353,42 @@
     <div class="overview-card">
       <div class="overview-grid">
         <div class="overview-lead">
-          <p class="overview-kicker">Overview</p>
-          <h2 class="overview-headline">
-            <span>It Listens.</span>
-            <span>It Thinks.</span>
-            <span>It Creates.</span>
-          </h2>
-          <p class="overview-subheadline">Meet Bagpiper: The all-in-one audio brain.</p>
+          <p class="overview-kicker">OVERVIEW</p>
+          <h2 class="overview-headline overview-headline--single">A unified model for all audio</h2>
+          <p class="overview-copy overview-copy--summary">
+            Unlike other models that are &quot;blind&quot; to context, Bagpiper builds a deep semantic understanding of every sound it hears. It uses this cognitive reasoning to solve open-ended tasks, whether you need to analyze a complex acoustic scene or synthesize a multi-speaker dialogue with music and effects.
+          </p>
         </div>
         <div class="overview-body">
-          <p class="overview-copy overview-copy--lead">
-            Unlike other models that are &quot;blind&quot; to context, Bagpiper builds a deep semantic understanding of every sound it hears.
-          </p>
-          <p class="overview-copy overview-copy--detail">
-            It uses this cognitive reasoning to solve open-ended tasks, whether you need to analyze a complex acoustic scene or synthesize a multi-speaker dialogue with music and effects.
-          </p>
-          <p class="overview-tagline">One Model. Infinite Audio Possibilities.</p>
+          <div class="tldr-demo-block">
+            <p class="tldr-section-title">TLDR Demo</p>
+            <div class="tldr-field">
+              <span class="tldr-field-label">User Prompt</span>
+              <p class="tldr-field-content">I need a short audio clip of two friends, Joe and Isabella, chatting in a quiet room.</p>
+            </div>
+            <details class="fold fold--thinking tldr-thinking" open>
+              <summary>Simulated Thinking</summary>
+              <div class="fold-body">
+<pre><code>&lt;partial rich thinking&gt;
+Request: The user requests a short...
+Details: The setting is a quiet, enclosed room...
+Quality: The recording should be high-fidelity, studio-quality audio...
+Plan: Generation Plan: Begin with a crisp hand clap
+&lt;partial rich thinking/&gt;</code></pre>
+              </div>
+            </details>
+            <div class="tldr-output">
+              <span class="tldr-field-label">Output</span>
+              <div class="tldr-audio-mock" aria-label="Mock audio player">
+                <span class="tldr-audio-play" aria-hidden="true">&#9654;</span>
+                <span class="tldr-audio-progress">
+                  <span class="tldr-audio-progress-bar"></span>
+                </span>
+                <span class="tldr-audio-time">0:00 / 0:08</span>
+              </div>
+              <p class="tldr-output-placeholder">&lt;audio clip&gt;</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

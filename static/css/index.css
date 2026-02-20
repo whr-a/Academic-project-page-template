@@ -122,6 +122,49 @@ body {
     line-height: 1.1 !important;
 }
 
+.publication-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.institution-logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: -0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.institution-logo-item {
+  width: 124px;
+  height: 72px;
+  margin: 0;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.institution-logo-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.institution-logo-item--wide {
+  width: 238px;
+}
+
 .publication-banner {
   max-height: 70vh;
   border-radius: var(--border-radius-lg);
@@ -639,6 +682,11 @@ a:focus {
   font-weight: 700;
 }
 
+.overview-headline--single {
+  max-width: 14ch;
+  color: #0f172a;
+}
+
 .overview-headline span {
   display: block;
   color: #0f172a;
@@ -661,6 +709,14 @@ a:focus {
   letter-spacing: -0.02em;
   color: #123b8a;
   text-wrap: balance;
+}
+
+.overview-copy--summary {
+  margin-top: 0.95rem;
+  color: #1f3557;
+  font-size: 1.03rem;
+  line-height: 1.78;
+  font-weight: 500;
 }
 
 .overview-body {
@@ -715,6 +771,128 @@ a:focus {
   text-wrap: balance;
 }
 
+.tldr-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tldr-section-title {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f3a92;
+}
+
+.tldr-field {
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.tldr-field-label {
+  display: block;
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tldr-field-content {
+  margin: 0.48rem 0 0;
+  color: #1e293b;
+  font-size: 0.96rem;
+  line-height: 1.62;
+  font-weight: 500;
+}
+
+.tldr-thinking {
+  margin: 0;
+}
+
+.tldr-thinking .fold-body {
+  padding: 0.8rem 0.9rem;
+}
+
+.tldr-thinking pre {
+  margin: 0;
+  overflow-x: auto;
+}
+
+.tldr-thinking code {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #0f172a;
+}
+
+.tldr-output {
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.tldr-audio-mock {
+  margin-top: 0.5rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 0.42rem 0.62rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #eff6ff;
+}
+
+.tldr-audio-play {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+
+.tldr-audio-progress {
+  position: relative;
+  flex: 1;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #cbd5e1;
+  overflow: hidden;
+}
+
+.tldr-audio-progress-bar {
+  display: block;
+  width: 38%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+}
+
+.tldr-audio-time {
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tldr-output-placeholder {
+  margin: 0.5rem 0 0;
+  color: #0f3a92;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 960px) {
   .overview-grid {
     grid-template-columns: 1fr;
@@ -753,6 +931,29 @@ a:focus {
     margin-top: 0.58rem;
     padding-left: 0.58rem;
     font-size: 0.96rem;
+  }
+
+  .institution-logo-row {
+    gap: 0.55rem;
+  }
+
+  .institution-logo-item {
+    width: 104px;
+    height: 62px;
+    padding: 0.35rem 0.42rem;
+  }
+
+  .institution-logo-item--wide {
+    width: 212px;
+  }
+
+  .overview-copy--summary {
+    font-size: 0.98rem;
+    line-height: 1.66;
+  }
+
+  .tldr-thinking code {
+    font-size: 0.8rem;
   }
 }
 

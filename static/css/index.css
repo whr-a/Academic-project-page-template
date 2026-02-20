@@ -693,10 +693,10 @@ a:focus {
 }
 
 .overview-copy--summary {
-  margin-top: 1.45rem;
+  margin-top: 2.1rem;
   color: #1f3557;
-  font-size: 1.03rem;
-  line-height: 1.78;
+  font-size: 1.12rem;
+  line-height: 1.82;
   font-weight: 500;
 }
 
@@ -800,10 +800,6 @@ a:focus {
 
 .tldr-assistant {
   margin: 0;
-  padding: 0.8rem 0.9rem;
-  border: 1px solid #dbeafe;
-  border-radius: 12px;
-  background: #ffffff;
 }
 
 .tldr-assistant .tldr-thinking,
@@ -816,18 +812,23 @@ a:focus {
   margin: 0;
 }
 
-.tldr-thinking .fold-body {
-  padding: 0.8rem 0.9rem;
+.tldr-plain-title {
+  margin: 0 0 0.34rem;
+  color: #1e3a8a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
-.tldr-thinking .fold-body p {
+.tldr-thinking p:not(.tldr-plain-title) {
   margin: 0;
   color: #0f172a;
   font-size: 0.9rem;
   line-height: 1.5;
 }
 
-.tldr-thinking .fold-body p + p {
+.tldr-thinking p + p {
   margin-top: 0.34rem;
 }
 
@@ -835,11 +836,7 @@ a:focus {
   margin: 0;
 }
 
-.tldr-caption .fold-body {
-  padding: 0.8rem 0.9rem;
-}
-
-.tldr-caption .fold-body p {
+.tldr-caption p:not(.tldr-plain-title) {
   margin: 0;
   color: #1f3557;
   font-size: 0.9rem;
@@ -848,10 +845,9 @@ a:focus {
 
 .tldr-audio-field {
   margin: 0;
-  padding: 0.8rem 0.9rem;
-  border: 1px solid #dbeafe;
-  border-radius: 12px;
-  background: #ffffff;
+  padding: 0.08rem 0 0;
+  border: 0;
+  background: transparent;
   text-align: left;
 }
 
@@ -927,13 +923,13 @@ a:focus {
   }
 
   .overview-copy--summary {
-    margin-top: 1.2rem;
-    font-size: 0.98rem;
-    line-height: 1.66;
+    margin-top: 1.55rem;
+    font-size: 1.04rem;
+    line-height: 1.72;
   }
 
-  .tldr-thinking .fold-body p,
-  .tldr-caption .fold-body p {
+  .tldr-thinking p:not(.tldr-plain-title),
+  .tldr-caption p:not(.tldr-plain-title) {
     font-size: 0.84rem;
   }
 
